@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conference Template – Red Cream Layout</title>
+  <style>
+    :root {
+      --color-primary: #B6462A;
+      --color-secondary: #FBE9DD;
+      --color-accent: #E4B7A0;
+      --color-bg: #FFFFFF;
+      --color-text-main: #2E2E2E;
+      --color-text-sub: #77736F;
+      --font-heading: "Montserrat", sans-serif;
+      --font-body: "SUIT", "Noto Sans KR", sans-serif;
+      --font-serif: "Playfair Display", serif;
+      --space-sm: 16px;
+      --space-md: 32px;
+      --space-lg: 64px;
+      --space-xl: 120px;
+      --radius: 12px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--color-bg);
+      color: var(--color-text-main);
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    section {
+      padding: var(--space-xl) var(--space-md);
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-heading);
+      color: var(--color-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: var(--space-sm);
+    }
+
+    h1 { font-size: 3.5rem; text-transform: uppercase; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+
+    p { font-size: 1.125rem; color: var(--color-text-sub); margin-bottom: var(--space-sm); }
+
+    button {
+      background: var(--color-primary);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      padding: 12px 32px;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    button:hover { background: var(--color-accent); }
+
+    .image-placeholder {
+      background: var(--color-secondary);
+      border: 1px dashed var(--color-accent);
+      border-radius: var(--radius);
+      aspect-ratio: 4/3;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      background: var(--color-secondary);
+      padding: var(--space-xl) var(--space-md);
+    }
+
+    .hero h1 { margin-bottom: var(--space-sm); }
+    .hero p { font-size: 1.25rem; margin-bottom: var(--space-md); }
+
+    /* FEATURES */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: var(--space-md);
+      text-align: center;
+    }
+
+    .feature {
+      background: var(--color-secondary);
+      padding: var(--space-lg) var(--space-sm);
+      border-radius: var(--radius);
+    }
+
+    /* FORM */
+    .form {
+      background: var(--color-bg);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--color-text-main);
+    }
+
+    .form input, .form select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--color-accent);
+      border-radius: var(--radius);
+      margin-bottom: var(--space-md);
+      font-family: var(--font-body);
+    }
+
+    /* SPEAKERS */
+    .speakers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-lg);
+      text-align: center;
+    }
+
+    .speaker-card {
+      background: var(--color-secondary);
+      border-radius: var(--radius);
+      padding: var(--space-md);
+    }
+
+    /* AGENDA */
+    .agenda table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    .agenda th, .agenda td {
+      padding: 12px;
+      border-bottom: 1px solid var(--color-border);
+      text-align: left;
+    }
+
+    .agenda th {
+      background: var(--color-secondary);
+      color: var(--color-primary);
+    }
+
+    /* RECAP */
+    .recap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-lg);
+      align-items: center;
+    }
+
+    blockquote {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--color-primary);
+      line-height: 1.8;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--color-primary);
+      color: #fff;
+      text-align: center;
+      padding: var(--space-lg) var(--space-md);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>SHIFT 2030</h1>
+    <p>Marketing Summit — Impact Inc.</p>
+    <button>Register Now</button>
+  </section>
+
+  <!-- FEATURES -->
+  <section>
+    <div class="features">
+      <div class="feature"><h3>Shift into the Future</h3><p>Stay ahead with insights from leading experts.</p></div>
+      <div class="feature"><h3>Evolve Your Thinking</h3><p>Transform your marketing mindset for 2030.</p></div>
+      <div class="feature"><h3>Expand Your Toolbox</h3><p>Learn hands-on strategies and new frameworks.</p></div>
+      <div class="feature"><h3>Elevate Your Career</h3><p>Network and grow with global marketers.</p></div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section>
+    <div class="form">
+      <h2>Reserve Your Spot</h2>
+      <form>
+        <label>Full Name*</label>
+        <input type="text" placeholder="Jane Doe">
+        <label>Email Address*</label>
+        <input type="email" placeholder="you@example.com">
+        <label>Ticket Type</label>
+        <select>
+          <option>Early Bird Pass</option>
+          <option>Day Pass</option>
+          <option>Full Event Pass</option>
+        </select>
+        <button>Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- SPEAKERS -->
+  <section>
+    <h2>Keynote Speakers</h2>
+    <div class="speakers">
+      <div class="speaker-card"><div class="image-placeholder"></div><h3>Riela Augustin</h3><p>CMO, Circuit Systems</p></div>
+      <div class="speaker-card"><div class="image-placeholder"></div><h3>Keegan Akiyama</h3><p>Author & Strategist</p></div>
+      <div class="speaker-card"><div class="image-placeholder"></div><h3>Guanyu Hsu</h3><p>Analytics Director</p></div>
+    </div>
+  </section>
+
+  <!-- AGENDA -->
+  <section class="agenda">
+    <h2>Conference Agenda</h2>
+    <table>
+      <tr><th>Time</th><th>Session</th><th>Speaker</th></tr>
+      <tr><td>9:00 AM</td><td>Opening Keynote: The Future of Marketing</td><td>Riela Augustin</td></tr>
+      <tr><td>10:15 AM</td><td>Brand Building in the Attention Economy</td><td>Solanna Neri</td></tr>
+      <tr><td>1:30 PM</td><td>Go-to-Market in Emerging APAC Markets</td><td>Irena Kim</td></tr>
+    </table>
+  </section>
+
+  <!-- RECAP -->
+  <section class="recap">
+    <blockquote>“Every session felt tuned to what marketers are dealing with right now. I left with a notebook full of ideas!”</blockquote>
+    <div class="image-placeholder"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Impact Inc. · 123 Anywhere St., Any City</p>
+    <p>Contact: hello@reallygreatsite.com</p>
+  </footer>
+
+</body>
+</html>
