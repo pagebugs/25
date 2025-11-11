@@ -3,257 +3,191 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conference Template – Red Cream Layout</title>
-  <style>
-    :root {
-      --color-primary: #B6462A;
-      --color-secondary: #FBE9DD;
-      --color-accent: #E4B7A0;
-      --color-bg: #FFFFFF;
-      --color-text-main: #2E2E2E;
-      --color-text-sub: #77736F;
-      --font-heading: "Montserrat", sans-serif;
-      --font-body: "SUIT", "Noto Sans KR", sans-serif;
-      --font-serif: "Playfair Display", serif;
-      --space-sm: 16px;
-      --space-md: 32px;
-      --space-lg: 64px;
-      --space-xl: 120px;
-      --radius: 12px;
-      --transition: all 0.3s ease;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: var(--font-body);
-      background: var(--color-bg);
-      color: var(--color-text-main);
-      line-height: 1.6;
-    }
-
-    img { max-width: 100%; height: auto; display: block; }
-
-    section {
-      padding: var(--space-xl) var(--space-md);
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    h1, h2, h3 {
-      font-family: var(--font-heading);
-      color: var(--color-primary);
-      letter-spacing: -0.02em;
-      margin-bottom: var(--space-sm);
-    }
-
-    h1 { font-size: 3.5rem; text-transform: uppercase; }
-    h2 { font-size: 2rem; }
-    h3 { font-size: 1.5rem; }
-
-    p { font-size: 1.125rem; color: var(--color-text-sub); margin-bottom: var(--space-sm); }
-
-    button {
-      background: var(--color-primary);
-      color: #fff;
-      border: none;
-      border-radius: var(--radius);
-      padding: 12px 32px;
-      font-family: var(--font-heading);
-      font-weight: 600;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    button:hover { background: var(--color-accent); }
-
-    .image-placeholder {
-      background: var(--color-secondary);
-      border: 1px dashed var(--color-accent);
-      border-radius: var(--radius);
-      aspect-ratio: 4/3;
-    }
-
-    /* HERO */
-    .hero {
-      text-align: center;
-      background: var(--color-secondary);
-      padding: var(--space-xl) var(--space-md);
-    }
-
-    .hero h1 { margin-bottom: var(--space-sm); }
-    .hero p { font-size: 1.25rem; margin-bottom: var(--space-md); }
-
-    /* FEATURES */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: var(--space-md);
-      text-align: center;
-    }
-
-    .feature {
-      background: var(--color-secondary);
-      padding: var(--space-lg) var(--space-sm);
-      border-radius: var(--radius);
-    }
-
-    /* FORM */
-    .form {
-      background: var(--color-bg);
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .form label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-      color: var(--color-text-main);
-    }
-
-    .form input, .form select {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid var(--color-accent);
-      border-radius: var(--radius);
-      margin-bottom: var(--space-md);
-      font-family: var(--font-body);
-    }
-
-    /* SPEAKERS */
-    .speakers {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: var(--space-lg);
-      text-align: center;
-    }
-
-    .speaker-card {
-      background: var(--color-secondary);
-      border-radius: var(--radius);
-      padding: var(--space-md);
-    }
-
-    /* AGENDA */
-    .agenda table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-    }
-
-    .agenda th, .agenda td {
-      padding: 12px;
-      border-bottom: 1px solid var(--color-border);
-      text-align: left;
-    }
-
-    .agenda th {
-      background: var(--color-secondary);
-      color: var(--color-primary);
-    }
-
-    /* RECAP */
-    .recap {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: var(--space-lg);
-      align-items: center;
-    }
-
-    blockquote {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      color: var(--color-primary);
-      line-height: 1.8;
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--color-primary);
-      color: #fff;
-      text-align: center;
-      padding: var(--space-lg) var(--space-md);
-    }
-  </style>
+  <title>SHIFT 2030 – Summit Redesign Template</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Playfair+Display:wght@600&family=SUIT:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="theme.css" />
 </head>
-
 <body>
+  <header class="top-banner">
+    <div class="container banner-content">
+      <div class="banner-tags">
+        <span>Impact Inc.</span>
+        <span class="dot"></span>
+        <span>Marketing Summit</span>
+      </div>
+      <button class="btn btn-outline">Register Now</button>
+    </div>
+  </header>
 
-  <!-- HERO -->
   <section class="hero">
-    <h1>SHIFT 2030</h1>
-    <p>Marketing Summit — Impact Inc.</p>
-    <button>Register Now</button>
-  </section>
-
-  <!-- FEATURES -->
-  <section>
-    <div class="features">
-      <div class="feature"><h3>Shift into the Future</h3><p>Stay ahead with insights from leading experts.</p></div>
-      <div class="feature"><h3>Evolve Your Thinking</h3><p>Transform your marketing mindset for 2030.</p></div>
-      <div class="feature"><h3>Expand Your Toolbox</h3><p>Learn hands-on strategies and new frameworks.</p></div>
-      <div class="feature"><h3>Elevate Your Career</h3><p>Network and grow with global marketers.</p></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Immersive marketing experience</span>
+        <h1>Shift 2030</h1>
+        <p class="lead">Shift into the future with sample copy that mimics the energy of the original layout. Replace this with your headline later.</p>
+        <div class="meta-grid">
+          <div class="meta-card">
+            <strong>June 18</strong>
+            <span>09:30 AM – 5:00 PM</span>
+          </div>
+          <div class="meta-card">
+            <strong>123 Anywhere St.</strong>
+            <span>Any City, APAC Region</span>
+          </div>
+          <div class="meta-card">
+            <strong>Hybrid Format</strong>
+            <span>In-person & Virtual Seats</span>
+          </div>
+        </div>
+        <button class="btn">Save my seat</button>
+      </div>
+      <div class="hero-media">
+        <div class="tile tall"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile wide"></div>
+      </div>
     </div>
   </section>
 
-  <!-- FORM -->
-  <section>
-    <div class="form">
-      <h2>Reserve Your Spot</h2>
-      <form>
-        <label>Full Name*</label>
-        <input type="text" placeholder="Jane Doe">
-        <label>Email Address*</label>
-        <input type="email" placeholder="you@example.com">
-        <label>Ticket Type</label>
-        <select>
-          <option>Early Bird Pass</option>
+  <section class="section-intro">
+    <div class="container split-intro">
+      <div class="intro-copy">
+        <span class="eyebrow">Shift into the future</span>
+        <h2>Elevate your marketing vision</h2>
+        <p>Use this placeholder block to spotlight the summit promise. Swap it out with a tailored statement that shares the ambition, energy, and transformation attendees can expect.</p>
+        <ul class="bullet-list">
+          <li>Sample insight headline to mirror the hierarchy.</li>
+          <li>Another supporting point with concise language.</li>
+          <li>Optional third bullet to complete the rhythm.</li>
+        </ul>
+      </div>
+      <div class="intro-media">
+        <div class="frame"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-registration" id="register">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Registration Form</span>
+        <h2>Reserve your access</h2>
+      </div>
+      <div class="form-panel">
+        <label for="name">Full Name*</label>
+        <input id="name" type="text" placeholder="예: 홍길동" />
+
+        <label for="email">Email Address*</label>
+        <input id="email" type="email" placeholder="you@example.com" />
+
+        <label for="ticket">Ticket Type</label>
+        <select id="ticket">
+          <option>Premium All-Access</option>
           <option>Day Pass</option>
-          <option>Full Event Pass</option>
+          <option>Digital Stream</option>
         </select>
-        <button>Submit</button>
-      </form>
+
+        <label for="notes">Notes</label>
+        <textarea id="notes" placeholder="Special requests or team details"></textarea>
+
+        <button class="btn" type="button">Submit</button>
+      </div>
     </div>
   </section>
 
-  <!-- SPEAKERS -->
-  <section>
-    <h2>Keynote Speakers</h2>
-    <div class="speakers">
-      <div class="speaker-card"><div class="image-placeholder"></div><h3>Riela Augustin</h3><p>CMO, Circuit Systems</p></div>
-      <div class="speaker-card"><div class="image-placeholder"></div><h3>Keegan Akiyama</h3><p>Author & Strategist</p></div>
-      <div class="speaker-card"><div class="image-placeholder"></div><h3>Guanyu Hsu</h3><p>Analytics Director</p></div>
+  <section class="section-keynotes">
+    <div class="container">
+      <span class="eyebrow">Keynotes</span>
+      <h2>Shift your perspective</h2>
+      <div class="keynote-table">
+        <article class="keynote-row">
+          <div class="index">01</div>
+          <div class="thumb"></div>
+          <div class="info">
+            <h3>The Future of Marketing</h3>
+            <p>Sample copy for a headline session description. Customize with the actual topic.</p>
+          </div>
+          <div class="speaker">
+            <span class="name">Cole A. Ainsworth</span>
+            <span class="role">Chief Experience Officer</span>
+          </div>
+        </article>
+        <article class="keynote-row">
+          <div class="index">02</div>
+          <div class="thumb"></div>
+          <div class="info">
+            <h3>Brand Building in the Attention Era</h3>
+            <p>Placeholder text showing how supporting copy sits alongside the talk title.</p>
+          </div>
+          <div class="speaker">
+            <span class="name">Irena Kim</span>
+            <span class="role">VP, Strategy Lab</span>
+          </div>
+        </article>
+        <article class="keynote-row">
+          <div class="index">03</div>
+          <div class="thumb"></div>
+          <div class="info">
+            <h3>Product Futures Ready</h3>
+            <p>Use this row to highlight another marquee speaker or breakout session.</p>
+          </div>
+          <div class="speaker">
+            <span class="name">Deven Alvarez</span>
+            <span class="role">Head of Innovation</span>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
-  <!-- AGENDA -->
-  <section class="agenda">
-    <h2>Conference Agenda</h2>
-    <table>
-      <tr><th>Time</th><th>Session</th><th>Speaker</th></tr>
-      <tr><td>9:00 AM</td><td>Opening Keynote: The Future of Marketing</td><td>Riela Augustin</td></tr>
-      <tr><td>10:15 AM</td><td>Brand Building in the Attention Economy</td><td>Solanna Neri</td></tr>
-      <tr><td>1:30 PM</td><td>Go-to-Market in Emerging APAC Markets</td><td>Irena Kim</td></tr>
-    </table>
+  <section class="section-perspective">
+    <div class="container perspective-grid">
+      <div class="perspective-copy">
+        <span class="eyebrow">Beyond the main stage</span>
+        <h2>Shift your perspective</h2>
+        <p>Continue the narrative with a flexible text area. This is where you can introduce tracks, workshops, or networking moments—any content that needs the same emphasis as the reference design.</p>
+      </div>
+      <div class="perspective-cards">
+        <div class="perspective-card">
+          <h3>Immersive Workshops</h3>
+          <p>Sample summary describing a hands-on lab or collaborative sprint.</p>
+        </div>
+        <div class="perspective-card">
+          <h3>Global Roundtables</h3>
+          <p>Placeholder copy for curated peer conversations that unlock new thinking.</p>
+        </div>
+        <div class="perspective-card">
+          <h3>Experience Gallery</h3>
+          <p>Short descriptor that mirrors the third column seen in the reference layout.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- RECAP -->
-  <section class="recap">
-    <blockquote>“Every session felt tuned to what marketers are dealing with right now. I left with a notebook full of ideas!”</blockquote>
-    <div class="image-placeholder"></div>
+  <section class="section-gallery">
+    <div class="container gallery-grid">
+      <div class="gallery-copy">
+        <h2>Recap the energy</h2>
+        <p>Swap in highlight moments, attendee quotes, or other storytelling elements that you want to feature after the event.</p>
+      </div>
+      <div class="gallery-tiles">
+        <div class="gallery-tile large"></div>
+        <div class="gallery-tile"></div>
+        <div class="gallery-tile"></div>
+        <div class="gallery-tile"></div>
+        <div class="gallery-tile"></div>
+      </div>
+    </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    <p>Impact Inc. · 123 Anywhere St., Any City</p>
-    <p>Contact: hello@reallygreatsite.com</p>
+    <div class="container footer-content">
+      <p>Impact Inc. · 123 Anywhere St., Any City</p>
+      <p>Contact: hello@reallygreatsite.com</p>
+    </div>
   </footer>
-
 </body>
 </html>
