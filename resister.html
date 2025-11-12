@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KOGHA Workshop 참가등록</title>
+  <link href="https://fonts.googleapis.com/css2?family=SUIT:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css">
+  <style>
+    .step { display: none; }
+    .step.active { display: block; }
+    .btn-group { display: flex; gap: 12px; margin-top: 20px; }
+    select {
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: 1.5px solid rgba(234, 59, 46, 0.25);
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    /* ✅ 완료 메시지 오버레이 */
+    .overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(6px);
+      z-index: 9999;
+      font-family: 'SUIT', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #222;
+      animation: fadeIn 0.3s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; } to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <section class="section-registration">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Registration</span>
+        <h2>KOGHA 워크샵 참가등록</h2>
+      </div>
+
+      <!-- 1단계: 조합사 선택 -->
+      <div id="step1" class="step active">
+        <p class="lead">조합사를 선택하세요.<br>목록에 없을 경우 ‘신규 추가’를 선택하세요.</p>
+        <form id="selectForm" class="form-panel">
+          <label for="companySelect">조합사 선택</label>
+          <select id="companySelect" required>
+            <option value="">-- 조합사 선택 --</option>
+            <option value="new">➕ 신규 추가</option>
+          </select>
+          <div class="btn-group">
+            <button type="submit" class="btn">다음 단계로</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- 2단계: 정보 확인 및 신청 -->
+      <div id="step2" class="step">
+        <form id="registrationForm" class="form-panel">
+          <label>조합사명</label>
+          <input type="text" id="name" name="name" readonly />
+
+          <label for="rep">대표자명</label>
+          <input type="text" id="rep" name="rep" placeholder="대표자명을 입력하세요" required />
+
+          <label for="phone">핸드폰 번호</label>
+          <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required />
+
+          <label for="email">이메일</label>
+          <input type="email" id="email" name="email" placeholder="example@domain.com" />
+
+          <label for="address">주소</label>
+          <textarea id="address" name="address" placeholder="예: 서울특별시 강남구..."></textarea>
+
+          <div class="btn-group">
+            <button type="button" id="prevBtn" class="btn btn-outline">이전 단계</button>
+            <button type="submit" class="btn">신청 완료</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ 오버레이 메시지 -->
+  <div id="overlay" class="overlay" style="display:none;">
+    ✅ 참가가 완료되었습니다.
+  </div>
+
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwT1AzNH3GS_Z_5DbR7wkXUoxEsOhW8P65Sl8n4oYU1Whkj8FHr0UAo1-ECUx9bHiDI/exec";
+    const companySelect = document.getElementById("companySelect");
+    const selectForm = document.getElementById("selectForm");
+    const registrationForm = document.getElementById("registrationForm");
+    const overlay = document.getElementById("overlay");
+
+    const step1 = document.getElementById("step1");
+    const step2 = document.getElementById("step2");
+
+    const nameInput = document.getElementById("name");
+    const repInput = document.getElementById("rep");
+    const phoneInput = document.getElementById("phone");
+    const emailInput = document.getElementById("email");
+    const addressInput = document.getElementById("address");
+    const prevBtn = document.getElementById("prevBtn");
+
+    // ✅ 1. 조합사 목록 불러오기
+    fetch(`${scriptURL}?q=*`)
+      .then(res => res.json())
+      .then(data => {
+        const results = data.results || [];
+        results.forEach(name => {
+          const opt = document.createElement("option");
+          opt.value = name;
+          opt.textContent = name;
+          companySelect.insertBefore(opt, companySelect.querySelector('option[value="new"]'));
+        });
+      });
+
+    // ✅ 2. 다음 단계로
+    selectForm.addEventListener("submit", e => {
+      e.preventDefault();
+      const selected = companySelect.value;
+      if (!selected) {
+        alert("조합사를 선택하세요.");
+        return;
+      }
+
+      if (selected === "new") {
+        const newName = prompt("신규 조합사명을 입력하세요:");
+        if (!newName) return;
+        nameInput.value = newName;
+        repInput.value = "";
+        phoneInput.value = "";
+        emailInput.value = "";
+        addressInput.value = "";
+      } else {
+        nameInput.value = selected;
+        fetch(`${scriptURL}?name=${encodeURIComponent(selected)}`)
+          .then(res => res.json())
+          .then(data => {
+            repInput.value = data.rep || "";
+            phoneInput.value = data.phone || "";
+            emailInput.value = data.email || "";
+            addressInput.value = data.address || "";
+          });
+      }
+
+      step1.classList.remove("active");
+      step2.classList.add("active");
+    });
+
+    // ✅ 3. 이전 단계로
+    prevBtn.addEventListener("click", () => {
+      step2.classList.remove("active");
+      step1.classList.add("active");
+    });
+
+    // ✅ 4. 신청 완료
+    registrationForm.addEventListener("submit", e => {
+      e.preventDefault();
+      const formData = new FormData(registrationForm);
+      formData.append("timestamp", new Date().toISOString());
+
+      fetch(scriptURL, { method: "POST", body: formData })
+        .then(() => {
+          overlay.style.display = "flex";
+          setTimeout(() => {
+            overlay.style.display = "none";
+            window.location.href = "index.html";
+          }, 3000);
+          registrationForm.reset();
+        })
+        .catch(err => alert("오류 발생: " + err));
+    });
+  </script>
+</body>
+</html>
