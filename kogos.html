@@ -3,257 +3,180 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Conference Template – Red Cream Layout</title>
-  <style>
-    :root {
-      --color-primary: #B6462A;
-      --color-secondary: #FBE9DD;
-      --color-accent: #E4B7A0;
-      --color-bg: #FFFFFF;
-      --color-text-main: #2E2E2E;
-      --color-text-sub: #77736F;
-      --font-heading: "Montserrat", sans-serif;
-      --font-body: "SUIT", "Noto Sans KR", sans-serif;
-      --font-serif: "Playfair Display", serif;
-      --space-sm: 16px;
-      --space-md: 32px;
-      --space-lg: 64px;
-      --space-xl: 120px;
-      --radius: 12px;
-      --transition: all 0.3s ease;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: var(--font-body);
-      background: var(--color-bg);
-      color: var(--color-text-main);
-      line-height: 1.6;
-    }
-
-    img { max-width: 100%; height: auto; display: block; }
-
-    section {
-      padding: var(--space-xl) var(--space-md);
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    h1, h2, h3 {
-      font-family: var(--font-heading);
-      color: var(--color-primary);
-      letter-spacing: -0.02em;
-      margin-bottom: var(--space-sm);
-    }
-
-    h1 { font-size: 3.5rem; text-transform: uppercase; }
-    h2 { font-size: 2rem; }
-    h3 { font-size: 1.5rem; }
-
-    p { font-size: 1.125rem; color: var(--color-text-sub); margin-bottom: var(--space-sm); }
-
-    button {
-      background: var(--color-primary);
-      color: #fff;
-      border: none;
-      border-radius: var(--radius);
-      padding: 12px 32px;
-      font-family: var(--font-heading);
-      font-weight: 600;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    button:hover { background: var(--color-accent); }
-
-    .image-placeholder {
-      background: var(--color-secondary);
-      border: 1px dashed var(--color-accent);
-      border-radius: var(--radius);
-      aspect-ratio: 4/3;
-    }
-
-    /* HERO */
-    .hero {
-      text-align: center;
-      background: var(--color-secondary);
-      padding: var(--space-xl) var(--space-md);
-    }
-
-    .hero h1 { margin-bottom: var(--space-sm); }
-    .hero p { font-size: 1.25rem; margin-bottom: var(--space-md); }
-
-    /* FEATURES */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: var(--space-md);
-      text-align: center;
-    }
-
-    .feature {
-      background: var(--color-secondary);
-      padding: var(--space-lg) var(--space-sm);
-      border-radius: var(--radius);
-    }
-
-    /* FORM */
-    .form {
-      background: var(--color-bg);
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .form label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-      color: var(--color-text-main);
-    }
-
-    .form input, .form select {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid var(--color-accent);
-      border-radius: var(--radius);
-      margin-bottom: var(--space-md);
-      font-family: var(--font-body);
-    }
-
-    /* SPEAKERS */
-    .speakers {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: var(--space-lg);
-      text-align: center;
-    }
-
-    .speaker-card {
-      background: var(--color-secondary);
-      border-radius: var(--radius);
-      padding: var(--space-md);
-    }
-
-    /* AGENDA */
-    .agenda table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-    }
-
-    .agenda th, .agenda td {
-      padding: 12px;
-      border-bottom: 1px solid var(--color-border);
-      text-align: left;
-    }
-
-    .agenda th {
-      background: var(--color-secondary);
-      color: var(--color-primary);
-    }
-
-    /* RECAP */
-    .recap {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: var(--space-lg);
-      align-items: center;
-    }
-
-    blockquote {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      color: var(--color-primary);
-      line-height: 1.8;
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--color-primary);
-      color: #fff;
-      text-align: center;
-      padding: var(--space-lg) var(--space-md);
-    }
-  </style>
+  <title>KOGHA Cloud Platform Newsletter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet" />
+  <link rel="stylesheet" href="theme.css" />
+  <script src="https://unpkg.com/scrollreveal"></script>
 </head>
-
 <body>
-
-  <!-- HERO -->
   <section class="hero">
-    <h1>SHIFT 2030</h1>
-    <p>Marketing Summit — Impact Inc.</p>
-    <button>Register Now</button>
-  </section>
-
-  <!-- FEATURES -->
-  <section>
-    <div class="features">
-      <div class="feature"><h3>Shift into the Future</h3><p>Stay ahead with insights from leading experts.</p></div>
-      <div class="feature"><h3>Evolve Your Thinking</h3><p>Transform your marketing mindset for 2030.</p></div>
-      <div class="feature"><h3>Expand Your Toolbox</h3><p>Learn hands-on strategies and new frameworks.</p></div>
-      <div class="feature"><h3>Elevate Your Career</h3><p>Network and grow with global marketers.</p></div>
+    <canvas id="network"></canvas>
+    <div class="container hero-inner">
+      <div class="hero-logo reveal-fade">
+        <div class="logo-placeholder" aria-hidden="true"></div>
+        <span class="logo-caption">KOGHA</span>
+      </div>
+      <div class="hero-copy reveal-fade">
+        <span class="eyebrow">Cloud Transformation</span>
+        <h1>KOGHA Cloud Platform</h1>
+        <p class="subtitle">조합의 신뢰를 구조로, 협력을 시스템으로</p>
+        <p class="highlight">67개 조합사를 하나의 비즈니스 네트워크로 연결하는 디지털 전환</p>
+      </div>
     </div>
   </section>
 
-  <!-- FORM -->
-  <section>
-    <div class="form">
-      <h2>Reserve Your Spot</h2>
-      <form>
-        <label>Full Name*</label>
-        <input type="text" placeholder="Jane Doe">
-        <label>Email Address*</label>
-        <input type="email" placeholder="you@example.com">
-        <label>Ticket Type</label>
-        <select>
-          <option>Early Bird Pass</option>
-          <option>Day Pass</option>
-          <option>Full Event Pass</option>
-        </select>
-        <button>Submit</button>
-      </form>
+  <section class="section gray reveal-up">
+    <div class="container narrow">
+      <span class="eyebrow">조합의 새로운 움직임</span>
+      <h2>공동사업위원회 발족</h2>
+      <p>조합의 전략적 협업을 전담할 <strong>‘공동사업위원회’</strong>가 공식 발족되었습니다. 위원회는 KOGHA Cloud 및 Kogo 브랜드와의 연계를 주도하며, 조합이 “운영 단체”에서 “실행 주체”로 전환하는 첫 구조적 시도를 시작합니다.</p>
+
+      <h3>신규 조합사 소개</h3>
+      <p><strong>센텀인터넷</strong> – 헬스케어 IT 인프라 및 예약관리 솔루션 기업<br />
+        <strong>다현비즈앤로우</strong> – 의료법·광고법 전문 법률 서비스 기업<br />
+        두 기업의 합류로 조합의 기술적·법률적 기반이 한층 강화되었습니다.</p>
     </div>
   </section>
 
-  <!-- SPEAKERS -->
-  <section>
-    <h2>Keynote Speakers</h2>
-    <div class="speakers">
-      <div class="speaker-card"><div class="image-placeholder"></div><h3>Riela Augustin</h3><p>CMO, Circuit Systems</p></div>
-      <div class="speaker-card"><div class="image-placeholder"></div><h3>Keegan Akiyama</h3><p>Author & Strategist</p></div>
-      <div class="speaker-card"><div class="image-placeholder"></div><h3>Guanyu Hsu</h3><p>Analytics Director</p></div>
+  <section class="section reveal-up">
+    <div class="container narrow">
+      <span class="eyebrow">브랜드 전환</span>
+      <h2>KOGHA Cloud 브랜드 체계</h2>
+      <p>조합 내 서비스 브랜드는 <strong>‘Kogo’</strong> 레이블 아래 통합됩니다. ‘Kogo’는 KOGHA의 지식과 신뢰를 연결하는 서비스 네트워크 브랜드입니다.</p>
+      <p>브랜드 전환 예시:</p>
+      <ul class="brand-list">
+        <li>닥큐멘토링 → <strong>Kogo Desk</strong></li>
+        <li>(예정) Kogo Trade / Kogo Partner / Kogo Insight</li>
+      </ul>
     </div>
   </section>
 
-  <!-- AGENDA -->
-  <section class="agenda">
-    <h2>Conference Agenda</h2>
-    <table>
-      <tr><th>Time</th><th>Session</th><th>Speaker</th></tr>
-      <tr><td>9:00 AM</td><td>Opening Keynote: The Future of Marketing</td><td>Riela Augustin</td></tr>
-      <tr><td>10:15 AM</td><td>Brand Building in the Attention Economy</td><td>Solanna Neri</td></tr>
-      <tr><td>1:30 PM</td><td>Go-to-Market in Emerging APAC Markets</td><td>Irena Kim</td></tr>
-    </table>
+  <section class="section gray reveal-up">
+    <div class="container">
+      <span class="eyebrow">KOGHA Cloud가 만드는 변화</span>
+      <div class="value-grid">
+        <article class="value-card">
+          <h3>병의원의 문제를 조합이 함께 해결하는 구조</h3>
+          <p>“의료광고 규제가 궁금합니다” → 법무 조합사 매칭<br />
+            “EMR 교체를 검토 중입니다” → IT 솔루션 3곳 동시 제안</p>
+        </article>
+        <article class="value-card">
+          <h3>지식이 관계로, 관계가 사업으로 확장되는 순환</h3>
+          <p>전문 답변과 제안이 상호 추천으로 이어지며, 하나의 대화가 다음 기회를 여는 구조로 발전합니다.</p>
+        </article>
+        <article class="value-card">
+          <h3>조합의 신뢰를 공통 브랜드로 전환</h3>
+          <p>‘KOGHA Certified’는 인증이 아닌 조합이 함께 만든 신뢰의 신호(Trust Signal)입니다.</p>
+        </article>
+      </div>
+    </div>
   </section>
 
-  <!-- RECAP -->
-  <section class="recap">
-    <blockquote>“Every session felt tuned to what marketers are dealing with right now. I left with a notebook full of ideas!”</blockquote>
-    <div class="image-placeholder"></div>
+  <section class="section reveal-up">
+    <div class="container narrow">
+      <span class="eyebrow">워크샵 안내</span>
+      <h2>KOGHA Cloud Workshop</h2>
+      <ul class="info-list">
+        <li><strong>일시:</strong> 2025년 12월 5일 (금) 오후 4시 ~ 6시</li>
+        <li><strong>장소:</strong> 펙토리얼성수 B1 타운홀 A</li>
+        <li><strong>대상:</strong> 각 조합사 CEO (의사결정 참여자)</li>
+        <li><strong>핵심 안건:</strong>
+          <ul>
+            <li>Cloud Platform 설계 방향 및 MVP 데모 공유</li>
+            <li>Kogo 브랜드 체계 및 공동사업위원회 운영 계획</li>
+            <li>조합사 간 연동 구조 및 운영 원칙 협의</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>Impact Inc. · 123 Anywhere St., Any City</p>
-    <p>Contact: hello@reallygreatsite.com</p>
-  </footer>
+  <section class="section dark reveal-fade">
+    <div class="container narrow">
+      <h2>함께 설계하는 미래</h2>
+      <p>이번 워크샵은 시스템을 ‘도입’하는 자리가 아니라, 조합의 생태계를 함께 설계하는 자리입니다.</p>
+      <p>참여하는 각 조합사는 이 구조의 일부가 아니라, 조합의 미래를 공동으로 설계하는 중심축이 됩니다.</p>
+      <p class="highlight">연결된 자산, 순환하는 신뢰, 함께 성장하는 구조 — 그것이 KOGHA Cloud의 핵심입니다.</p>
+      <div class="cta-buttons">
+        <a href="#" class="btn primary">워크샵 참여 등록</a>
+        <a href="#" class="btn secondary">사전 자료 보기</a>
+      </div>
+    </div>
+  </section>
 
+  <script>
+    const canvas = document.getElementById('network');
+    const ctx = canvas.getContext('2d');
+    let nodes = [];
+    let w, h;
+
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight * 0.85;
+      nodes = Array.from({ length: 40 }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4
+      }));
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = 'rgba(255,255,255,0.9)';
+      ctx.strokeStyle = 'rgba(207, 226, 243, 0.35)';
+
+      nodes.forEach((node) => {
+        node.x += node.vx;
+        node.y += node.vy;
+
+        if (node.x <= 0 || node.x >= w) node.vx *= -1;
+        if (node.y <= 0 || node.y >= h) node.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, 2.2, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const dx = nodes[i].x - nodes[j].x;
+          const dy = nodes[i].y - nodes[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 140) {
+            ctx.lineWidth = 0.4;
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+
+    ScrollReveal().reveal('.reveal-up', {
+      distance: '40px',
+      origin: 'bottom',
+      duration: 800,
+      interval: 150,
+      opacity: 0
+    });
+
+    ScrollReveal().reveal('.reveal-fade', {
+      opacity: 0,
+      duration: 1000,
+      delay: 200
+    });
+  </script>
 </body>
 </html>
