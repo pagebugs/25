@@ -546,23 +546,6 @@ footer p {
 /* =========================================================
    Responsive Tweaks
    ========================================================= */
-@media (max-width: 1024px) {
-  section, header, footer {
-    padding: var(--space-lg) var(--space-md);
-  }
-
-  .hero-grid {
-    gap: var(--space-md);
-  }
-
-  .hero-copy {
-    max-width: none;
-  }
-
-  .keynote-row {
-    grid-template-columns: 50px 100px 1fr;
-  }
-}
 
 @media (max-width: 768px) {
   section, header, footer {
